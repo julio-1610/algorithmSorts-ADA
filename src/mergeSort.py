@@ -1,4 +1,5 @@
-def mergeSort(arr):
+def mergeSort(array):
+    arr = array
     if len(arr) > 1:
         mid = len(arr) // 2
         left = arr[:mid]
@@ -25,3 +26,4 @@ def mergeSort(arr):
             arr[k]=right[j]
             j += 1
             k += 1
+    return arr
