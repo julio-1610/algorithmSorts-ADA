@@ -13,13 +13,16 @@ def division(arr, l, h):
     return (i+1)
  
  
-def quickSort(arr, l, h):
+def quickSort(array, l, h):
+    arr = array
     if len(arr) == 1:
         return arr
     if l < h:
- 
+        
+    
         pi = division(arr, l, h)
-
-        quickSort(arr, l, pi-1)
-        quickSort(arr, pi+1, high)
+        result = []
+        result.append(quickSort(arr, l, pi-1))
+        result.append(quickSort(arr, pi+1, high))
+    return arr
  
