@@ -1,9 +1,13 @@
+def doMergeSort(array):
+    result = array
+    return mergeSort(result)
+    
+
 def mergeSort(array):
-    arr = array
-    if len(arr) > 1:
-        mid = len(arr) // 2
-        left = arr[:mid]
-        right = arr[mid:]
+    if len(array) > 1:
+        mid = len(array) // 2
+        left = array[:mid]
+        right = array[mid:]
         mergeSort(left)
         mergeSort(right)
         i = 0
@@ -11,19 +15,18 @@ def mergeSort(array):
         k = 0
         while i < len(left) and j < len(right):
             if left[i] <= right[j]:
-              arr[k] = left[i]
+              array[k] = left[i]
               i += 1
             else:
-                arr[k] = right[j]
+                array[k] = right[j]
                 j += 1
             k += 1
         while i < len(left):
-            arr[k] = left[i]
+            array[k] = left[i]
             i += 1
             k += 1
 
         while j < len(right):
-            arr[k]=right[j]
+            array[k]=right[j]
             j += 1
             k += 1
-    return arr
